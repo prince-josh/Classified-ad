@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo/LogoMakr-9b7mJ9.png" type="image/x-icon">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Libraries CSS Files -->
+<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="lib/animate/animate.min.css" rel="stylesheet">
+<link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+     <!--jquery-->
+<script src="js/jquery-3.4.1.js"></script>
+<!-- Main Stylesheet File -->
+<link rel="stylesheet" href="css/register.css">
+<link href="css/style.css" rel="stylesheet">
+    <title>Sign Up - Trade Am</title>
+</head>
+<body>
+    <header id="page-top">
+        <nav class="navbar navbar-b navbar-trans navbar-expand-md " id="mainNav">
+          <div class="container">
+            <a class="navbar-brand js-scroll" href="index.php" id="logo">
+              <img src="images/logo/LogoMakr-5BBeMZ.png" alt="logo" height="50px" width="150px">
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+              aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+              <span><i class="fa fa-bars"></i></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link js-scroll active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll" data-toggle="modal" data-target="#loginModal">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll" href="register.html">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll" href="#about-project">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll" href="#about-project">Post An Ad</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- Nav End -->
+      </header>
+      <main>
+          <!--banner-->
+        <div class="register-banner" style="background-image: url('images/bg/banner.png');">
+            <div class="register-content">
+              <div class="h2">Sign Up</div>
+            </div>
+        </div>
+
+          <!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="index.php" method="post">
+          <div class="form-group">
+            <label for="voterID"> Username:</label>
+            <input type="text" name="username" class="form-control" required placeholder="enter your username">
+          </div>
+
+          <div class="form-group">
+            <label for="password"> Password:</label>
+            <input type="password" name="password" class="form-control" required placeholder="enter your password">
+          </div>
+          <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-danger" name="login">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</form>
+
+     <!--sign in form-->
+     <section class="register my-5">
+         <form action="" method="post">
+             <div class="row">
+             <div class="col-sm-12">
+                 <div class="form-group">
+                     <label for="firstname">First Name:</label><br>
+                     <input type="text" name="firstname" id="" placeholder="enter your first name">
+                 </div>
+             </div>
+
+             <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="lastname">Last Name</label> <br>
+                    <input type="text" name="lastname" id="" placeholder="enter your second name">
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" id="" placeholder="enter email">
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="phone">Phone Number</label><br>
+                    <input type="number" name="phone" id="" placeholder="enter your phone number">
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password" id="" placeholder="enter password">
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="confrim_password">Conform Password</label><br>
+                    <input type="password" name="c_password" id="" placeholder="confirm password">
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="Profile_pic">Profile Picture</label><br>
+                    <input type="file" name="Profile_pic" id="">
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <input type="submit" name="firstname" value="Submit" class="btn">
+                </div>
+            </div>
+             </div>
+         </form>
+     </section>
+  </main>
+        <!-- Footer Section Start -->
+        <footer>
+          <!-- Footer Area Start -->
+          <section class="footer-Content">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12 about-us">
+                    <h3 class="f-title">About us</h3>
+                    <div class="textwidget">
+                      <p>Trade Am The Largest Campus Ads Website, Where you can Buy and sell anything from used electronic devices to household items.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 quick-links">
+                    <h3 class="f-title">Quick Links</h3>
+                    <ul class="menu">
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">FAQ</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Contact</a></li>
+                      <li><a href="#">Terms of Use</a></li>
+                      <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 col-xs-12 contact-us">
+                  <h1 class="f-title">Contact Us</h1>
+					        <div><i class="fa fa-map-marker"> 24 New Lagos Road</i></div>
+				        	<div><i class="fa fa-envelope"> joshnwaorisa@gmail.com</i></div>
+				        	<div><i class="fa fa-phone"> 07053665721</i></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Footer area End -->
+        </footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="site-info pull-left">
+                  <p>All copyrights reserved &copy; 2021 - Trade Am</a></p>
+                </div>    					
+                <div class="bottom-social-icons social-icon pull-right">  
+                  <a class="facebook" target="_blank" href="https://web.facebook.com/GrayGrids"><i class="fa fa-facebook"></i></a> 
+                  <a class="twitter" target="_blank" href="https://twitter.com/GrayGrids"><i class="fa fa-twitter"></i></a>
+                  <a class="dribble" target="_blank" href="https://dribbble.com/"><i class="fa fa-dribbble"></i></a>
+                  <a class="flickr" target="_blank" href="https://www.flickr.com/"><i class="fa fa-flickr"></i></a>
+                  <a class="youtube" target="_blank" href="https://youtube.com"><i class="fa fa-youtube"></i></a>
+                  <a class="google-plus" target="_blank" href="https://plus.google.com"><i class="fa fa-google-plus"></i></a>
+                  <a class="linkedin" target="_blank" href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Copyright End -->
+        <!-- Footer Section End -->  
+    <!-- JavaScript Libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/popper/popper.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/counterup/jquery.waypoints.min.js"></script>
+<script src="lib/counterup/jquery.counterup.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script src="lib/typed/typed.min.js"></script>
+<!--custom Javascript-->
+<script src="js/script.js"></script>
+</body>
+</html>

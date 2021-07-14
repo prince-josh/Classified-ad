@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo/LogoMakr-9b7mJ9.png" type="image/x-icon">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Libraries CSS Files -->
+<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="lib/animate/animate.min.css" rel="stylesheet">
+<link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+     <!--jquery-->
+<script src="js/jquery-3.4.1.js"></script>
+<!-- Main Stylesheet File -->
+<link rel="stylesheet" href="css/ad-details.css">
+<link href="css/style.css" rel="stylesheet">
+    <title>Ad Details- Trade Am</title>
+</head>
+<body>
+    <header id="page-top">
+        <nav class="navbar navbar-b navbar-trans navbar-expand-md " id="mainNav">
+          <div class="container">
+            <a class="navbar-brand js-scroll" href="index.php" id="logo">
+              <img src="images/logo/LogoMakr-5BBeMZ.png" alt="logo" height="50px" width="150px">
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+              aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+              <span><i class="fa fa-bars"></i></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link js-scroll active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll" data-toggle="modal" data-target="#loginModal">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll" href="register.html">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll" href="#about-project">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll" href="#about-project">Post An Ad</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- Nav End -->
+      </header>
+      <main>
+
+          <!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="index.php" method="post">
+          <div class="form-group">
+            <label for="username"> Username:</label>
+            <input type="text" name="username" class="form-control" required placeholder="enter your username">
+          </div>
+
+          <div class="form-group">
+            <label for="password"> Password:</label>
+            <input type="password" name="password" class="form-control" required placeholder="enter your password">
+          </div>
+          <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-danger" name="login">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</form>
+
+     <!--ad details-->
+     <section class="ad-details my-5 container">
+       <div class="row">
+         <div class="col-sm-12 col-md-8">
+           <span class="ad-name">Ad Name</span>
+            <span class="ad-price">Price: $2000</span>
+            
+           <div class="main-ad-img mb-3">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="images/post/img-2.png" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="images/post/img-3.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="images/post/img-35.jpg" alt="Third slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+           </div>
+        
+         
+         <!--ad details-->
+         <div class="ad-description mt-5">
+           <div class="description my-3">
+             <span class="views fa fa-eye"> 5 Veiws</span>
+             <h6>Description</h6>
+             <div class="description-details">
+               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Libero est repellendus blanditiis aliquam possimus delectus, 
+               praesentium quam obcaecati quo culpa odit explicabo ipsam similique fugiat,
+               odio eos. Cum, possimus beatae!
+             </div>
+             <div class="posted-on mt-5">Posted On: 20-4-21</div>
+             <div class="product-category">Category: Product Category</div>
+           </div>
+         </div>
+
+        </div>
+         <!--seller details-->
+         <div class="col-sm-12 col-md-4">
+          <h4 class="posted-by">Ad Posted By</h4>
+           <div class="seller-section">
+          <div class="seller-details">
+            <img src="images/users/user.jpg">
+              <div class="seller-info">
+                  <div class="card-title seller-name">John Doe</div>
+                  <div class="card-subtitle seller-phone">07053665721</div>
+                  <div class="seller-email">Johndoe@gmail.com</div>
+              </div>
+          </div> <!--seller-detail end-->
+
+          <div class="message-seller">
+            <button class="form-toggler btn btn-danger mb-2">Message Seller</button>
+            <div class="form">
+                <form action="" method="post">
+                  <input type="text" name="name" id="name" placeholder="enter your name*" required><br>
+                  <input type="number" name="Phone" id="phone" placeholder="enter phone number*" required><br>
+                  <input type="email" name="email" id="email" placeholder="enter email">
+                  <textarea name="message" id="message">Hi am interested in buying the $product_name
+                  </textarea>
+                  <button type="submit" id="send" name="send" class="btn btn-danger"> Send</button>
+                </form>
+            </div>
+          </div>
+           </div> <!-- /seller-section -->
+          <!--safty tips-->
+          <div class="card mt-3" id="safty-tips">
+              <div class="card-body">
+                  <div class="card-title st-heading"> <h3>Safty Tips</h3> </div>
+                  <div class="card-subtitle st-info">
+                    <ol>
+                      <li>lorem</li>
+                      <li> lorem</li>
+                      <li>lorem</li>
+                    </ol>
+                  </div>
+              </div>
+          </div> <!--card end-->
+
+          <!--similar ads-->
+          <div class="similar-ads mt-3">
+            <h3>Similar Ads</h3>
+            <div class="similar-ad">
+              <img src="images/post/img1.jpg" alt="">
+              <div class="similar-ad-details">
+                <div class="ad-name">Apple</div>
+                <div class="ad-price">$30,000</div>
+            </div>
+          </div>
+          <hr>
+          <div class="similar-ad">
+            <img src="images/post/img1.jpg" alt="">
+            <div class="similar-ad-details">
+              <div class="ad-name">Apple</div>
+              <div class="ad-price">$30,000</div>
+          </div>
+
+        </div>
+
+          </div>
+        </div>
+
+       </div>
+     </section>
+  </main>
+        <!-- Footer Section Start -->
+        <footer>
+          <!-- Footer Area Start -->
+          <section class="footer-Content">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12 about-us">
+                    <h3 class="f-title">About us</h3>
+                    <div class="textwidget">
+                      <p>Trade Am The Largest Campus Ads Website, Where you can Buy and sell anything from used electronic devices to household items.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 quick-links">
+                    <h3 class="f-title">Quick Links</h3>
+                    <ul class="menu">
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">Categories</a></li>
+                      <li><a href="#">FAQ</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Contact</a></li>
+                      <li><a href="#">Terms of Use</a></li>
+                      <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 col-xs-12 contact-us">
+                  <h1 class="f-title">Contact Us</h1>
+					        <div><i class="fa fa-map-marker"> 24 New Lagos Road</i></div>
+				        	<div><i class="fa fa-envelope"> joshnwaorisa@gmail.com</i></div>
+				        	<div><i class="fa fa-phone"> 07053665721</i></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Footer area End -->
+        </footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="site-info pull-left">
+                  <p>All copyrights reserved &copy; 2021 - Trade Am</a></p>
+                </div>    					
+                <div class="bottom-social-icons social-icon pull-right">  
+                  <a class="facebook" target="_blank" href="https://web.facebook.com/GrayGrids"><i class="fa fa-facebook"></i></a> 
+                  <a class="twitter" target="_blank" href="https://twitter.com/GrayGrids"><i class="fa fa-twitter"></i></a>
+                  <a class="dribble" target="_blank" href="https://dribbble.com/"><i class="fa fa-dribbble"></i></a>
+                  <a class="flickr" target="_blank" href="https://www.flickr.com/"><i class="fa fa-flickr"></i></a>
+                  <a class="youtube" target="_blank" href="https://youtube.com"><i class="fa fa-youtube"></i></a>
+                  <a class="google-plus" target="_blank" href="https://plus.google.com"><i class="fa fa-google-plus"></i></a>
+                  <a class="linkedin" target="_blank" href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Copyright End -->
+        <!-- Footer Section End -->  
+    <!-- JavaScript Libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/popper/popper.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/counterup/jquery.waypoints.min.js"></script>
+<script src="lib/counterup/jquery.counterup.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script src="lib/typed/typed.min.js"></script>
+<!--custom Javascript-->
+<script src="js/script.js"></script>
+</body>
+</html>

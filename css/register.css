@@ -1,0 +1,31 @@
+.register-banner{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 120px;
+}
+.register-content .h2{
+    padding: 50px;
+    color: #fff;
+    font-weight: 900;
+    text-align: center;
+}
+.register{
+    border-radius: 15px;
+    border: 1px lightgrey solid;
+    background-color: white;
+    margin: auto;
+    width: 400px;
+    padding: 20px;
+}
+.register input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px lightgrey solid;
+}
+.register input[type = submit]{
+    background-color: red;
+    border-radius: 20px;
+}
+.register input[type = file]{
+    border: none !important;
+}
