@@ -27,6 +27,9 @@
     <?php
     include "includes/header.php";
     ?>
+        <div id="page-preloader">
+		    <div class="theme-loader">Trade Am</div>
+	    </div>
       <main>
           <!--banner-->
         <div class="register-banner" style="background-image: url('images/bg/banner.png');">

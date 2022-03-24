@@ -7,6 +7,10 @@ if (!isset($_GET["id"])) {
 }else{
 
   $product_id = $_GET['id'];
+  //update view
+  $update_view = "update ads set ad_views = ad_views + 1 where ad_id = '$product_id'";
+  $run_update_views = mysqli_query($con, $update_view);
+
   //get product details
   $sel = "select * from ads where ad_id = '$product_id'";
   $run_sel  = mysqli_query($con, $sel);
@@ -25,10 +29,7 @@ if (!isset($_GET["id"])) {
   $poster_phone = $row['poster_phone'];
   $poster_email = $row['poster_email'];
   $poster_img = $row['poster_img'];
-
-  //update view
-  $update_view = "update ads set ad_views = ad_views+1 where ad_id = '$product_id'";
-  $run_update_views = mysqli_query($con, $update_view);
+  
   //get images
 //   function make_query($con)
 // {
@@ -87,8 +88,9 @@ if (!isset($_GET["id"])) {
 // }
   //get similar ads
   // $sel_similar_ads = "SELECT * FROM `ads_images` AS img INNER JOIN `ads` AS p on img.ad_id = p.ad_id where ad_category = '$category' AND p.ad_id != '$product_id' GROUP BY p.ad_id DESC limit 10";
-  $sel_similar_ads = "SELECT * FROM `ads` where ad_category = '$category' AND ad_id != '$product_id' GROUP BY ad_id DESC limit 10";
+  $sel_similar_ads = "SELECT * FROM `ads` where ad_category = '$category' AND ad_id != '$product_id' AND ad_status = 'active' GROUP BY ad_id DESC limit 10";
   $run_sel_similar_ads = mysqli_query($con, $sel_similar_ads);
+  $count_similar_ads = mysqli_num_rows($run_sel_similar_ads);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -115,6 +117,10 @@ if (!isset($_GET["id"])) {
 <?php
         include "includes/header.php"
         ?>
+       <div id="page-preloader">
+		        <div class="theme-loader">Trade Am</div>
+	      </div>
+
       <main>
 
          
@@ -153,7 +159,7 @@ if (!isset($_GET["id"])) {
          <!--ad details-->
          <div class="ad-description mt-5">
            <div class="description my-3">
-             <span class="views fa fa-eye"> <?php echo htmlspecialchars($veiws)?> Veiw(s)</span>
+             <span class="views fa fa-eye"> <?php echo htmlspecialchars($veiws)?> View(s)</span>
              <h6>Description</h6>
              <div class="description-details">
                <?php echo htmlspecialchars($description);?>
@@ -211,12 +217,12 @@ if (!isset($_GET["id"])) {
           <!--safty tips-->
           <div class="card mt-3" id="safty-tips">
               <div class="card-body">
-                  <div class="card-title st-heading"> <h3>Safty Tips</h3> </div>
+                  <div class="card-title st-heading"> <h3>Safety Tips</h3> </div>
                   <div class="card-subtitle st-info">
                     <ol>
                       <li>Never meet any seller in a secluded area</li>
-                      <li> lorem</li>
-                      <li>lorem</li>
+                      <li> Never pay before seeing the product</li>
+                      <li>Ensure documents provided are correct before paying</li>
                     </ol>
                   </div>
               </div>
@@ -226,6 +232,13 @@ if (!isset($_GET["id"])) {
           <div class="similar-ads mt-3">
             <h3>Similar Ads</h3>
               <?php
+               if ($count_similar_ads < 1) {
+                echo "<center>
+                <h6 class = 'mt-5 empty-resu'>
+               No similar ads yet.
+                </h6>
+                </center>";
+            }
               while ($result = mysqli_fetch_assoc($run_sel_similar_ads)) {
                 $ad_id = $result['ad_id'];
 

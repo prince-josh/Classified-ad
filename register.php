@@ -27,6 +27,9 @@
     <?php
     include "includes/header.php";
     ?>
+    <div id="page-preloader">
+		<div class="theme-loader">Trade Am</div>
+	</div>
       <main>
           <!--banner-->
         <div class="register-banner" style="background-image: url('images/bg/banner.png');">
@@ -38,6 +41,60 @@
      <!--sign in form-->
      <section class="register my-5">
          <form action="register.php" method="post" enctype ="multipart/form-data">
+         <?php
+         if (isset($_POST['submit'])) {
+          $fname = mysqli_real_escape_string($con, ucfirst($_POST['firstname']));
+          $lname = mysqli_real_escape_string($con, ucfirst($_POST['lastname']));
+          $email = mysqli_real_escape_string($con, $_POST['email']);
+          $phone = mysqli_real_escape_string($con, $_POST['phone']);
+          $uni = mysqli_real_escape_string($con, $_POST['university']);
+          $pass =  mysqli_real_escape_string($con, $_POST['password']);
+          $c_pass = mysqli_real_escape_string($con,  $_POST['c_password']);
+          $pass_encode = password_hash($pass, PASSWORD_BCRYPT);
+          
+          $pic = time()."_". $_FILES['profile_pic']['name'];
+          $tmp_pic = $_FILES['profile_pic']['tmp_name'];
+          
+          move_uploaded_file($tmp_pic, "images/users/$pic");
+          $sel = "select email from users where email = '$email'";
+          $run_sel = mysqli_query($con, $sel);
+          $check_email = mysqli_num_rows($run_sel);
+          if (strlen($pass) <= 8) {
+            echo "<div class = 'alert alert-danger'>
+                password must be 8 characters or more
+            </div>";
+          }
+          if ($check_email > 0) {
+            echo "<div class = 'alert alert-danger'>
+                Email already exist 
+            </div>";
+          }
+          if ($pass !== $c_pass) {
+            echo "<div class = 'alert alert-danger'>
+                Passwords don't match 
+            </div>";
+          }
+          $extention = pathinfo($_FILES["profile_pic"]["name"], PATHINFO_EXTENSION);
+
+            if (!in_array(strtolower($extention), ['png', 'jpeg', 'jpg', 'svg']) ) {
+                echo "<div class = 'alert alert-danger'>
+                    Profile picture must be an image
+                </div>";
+            }
+          if ($check_email == 0 AND strlen($pass) >= 8 AND $pass === $c_pass AND in_array($extention, ['png', 'jpeg', 'jpg', 'svg']) ) {
+              $insert = "insert into users(first_name, last_name, email, phone_num, university, password, picture, date_registered) values('$fname', '$lname', '$email', '$phone', '$uni', '$pass_encode', '$pic', NOW())";
+              $run = mysqli_query($con, $insert);
+              if ($run) {
+                  $_SESSION['email'] = $email;
+                  echo "<script> alert('Registration successful') </script>";
+                  echo "<script> window.open('user/index.php', '_self') </script>";
+              }else{
+                  echo "<script> window.open('register.php', '_self') </script>";
+              }
+          }
+        
+      }
+      ?>
              <div class="row">
              <div class="col-sm-12">
                  <div class="form-group">
@@ -64,6 +121,16 @@
                 <div class="form-group">
                     <label for="phone">Phone Number</label><br>
                     <input type="text" name="phone" id="phone" required placeholder="enter your phone number">
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="phone">University</label><br>
+                    <select name="university" id="" class="form-control" required>
+                        <option value="">Select University</option>
+                        <option value="University of Benin"> University of Benin</option>
+                    </select>
                 </div>
             </div>
 
@@ -97,55 +164,6 @@
                     <p>Already have an account? <a href="login.php" style="color: black">Login</a> </p>
             </div>
              </div>
-         
-         <?php
-         if (isset($_POST['submit'])) {
-
-          $fname = mysqli_real_escape_string($con, ucfirst($_POST['firstname']));
-          $lname = mysqli_real_escape_string($con, ucfirst($_POST['lastname']));
-          $email = mysqli_real_escape_string($con, $_POST['email']);
-          $phone = mysqli_real_escape_string($con, $_POST['phone']);
-          $pass =  mysqli_real_escape_string($con, $_POST['password']);
-          $c_pass = mysqli_real_escape_string($con,  $_POST['c_password']);
-          $pass_encode = password_hash($pass, PASSWORD_BCRYPT);
-          
-          $pic = time()."_". $_FILES['profile_pic']['name'];
-          $tmp_pic = $_FILES['profile_pic']['tmp_name'];
-          
-          move_uploaded_file($tmp_pic, "images/users/$pic");
-          $sel = "select email from users where email = '$email'";
-          $run_sel = mysqli_query($con, $sel);
-          $check_email = mysqli_num_rows($run_sel);
-          if (strlen($pass) <= 8) {
-            echo "<div class = 'alert alert-danger'>
-            password must be 8 characters or more
-            </div>";
-          }
-          if ($check_email > 0) {
-            echo "<div class = 'alert alert-danger'>
-            Email already exist 
-            </div>";
-          }
-          if ($pass !== $c_pass) {
-            echo "<div class = 'alert alert-danger'>
-            passwords don't match 
-            </div>";
-          }
-  
-          if ($check_email == 0 AND strlen($pass) >= 8 AND $pass === $c_pass) {
-              $insert = "insert into users(first_name, last_name, email, phone_num, password, picture, date_registered) values('$fname', '$lname', '$email', '$phone', '$pass_encode', '$pic', NOW())";
-              $run = mysqli_query($con, $insert);
-              if ($run) {
-                  $_SESSION['email'] = $email;
-                  echo "<script> alert('Registration successful') </script>";
-                  echo "<script> window.open('user/index.php', '_self') </script>";
-              }else{
-                  echo "<script> window.open('register.php', '_self') </script>";
-              }
-          }
-        
-      }
-      ?>
       </form>
      </section>
   </main>

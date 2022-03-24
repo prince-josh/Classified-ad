@@ -1,8 +1,10 @@
 @import url('http://fonts.googleapis.com/css?family=Open+Sans');
 :root{
-    --main-color: #dd0000;
+    --main-color: rgba(10, 10, 12, 0.781);
     --color-dark: #1d2231;
     --text-gray: #8390a2;
+    --button-main:rgba(12, 12, 165, 0.973);
+    --button-hover: rgba(0, 0, 255, 0.897);
 }
 *{
     padding: 0;
@@ -11,6 +13,144 @@
     list-style-type: none;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
+}
+/* preloader css */
+
+#page-preloader {
+	background: #ffffff;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999999;
+}
+.theme-loader {
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 18px;
+    color: var(--button-main);
+	letter-spacing: 0.2em;
+	text-align: center;
+	width: 244px;
+	height: 49px;
+	line-height: 49px;
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+}
+
+.theme-loader::before,
+.theme-loader::after {
+	content: "";
+	display: block;
+	width: 15px;
+	height: 15px;
+	background: var(--button-main);
+	position: absolute;
+	animation: cssload-load 0.91s infinite alternate ease-in-out;
+	-o-animation: cssload-load 0.91s infinite alternate ease-in-out;
+	-ms-animation: cssload-load 0.91s infinite alternate ease-in-out;
+	-webkit-animation: cssload-load 0.91s infinite alternate ease-in-out;
+	-moz-animation: cssload-load 0.91s infinite alternate ease-in-out;
+}
+
+.theme-loader::before {
+	top: 0;
+}
+
+.theme-loader::after {
+	bottom: 0;
+}
+
+@keyframes cssload-load {
+	0% {
+		left: 0;
+		height: 29px;
+		width: 15px;
+	}
+	50% {
+		height: 8px;
+		width: 39px;
+	}
+	100% {
+		left: 229px;
+		height: 29px;
+		width: 15px;
+	}
+}
+
+@-o-keyframes cssload-load {
+	0% {
+		left: 0;
+		height: 29px;
+		width: 15px;
+	}
+	50% {
+		height: 8px;
+		width: 39px;
+	}
+	100% {
+		left: 229px;
+		height: 29px;
+		width: 15px;
+	}
+}
+
+@-ms-keyframes cssload-load {
+	0% {
+		left: 0;
+		height: 29px;
+		width: 15px;
+	}
+	50% {
+		height: 8px;
+		width: 39px;
+	}
+	100% {
+		left: 229px;
+		height: 29px;
+		width: 15px;
+	}
+}
+
+@-webkit-keyframes cssload-load {
+	0% {
+		left: 0;
+		height: 29px;
+		width: 15px;
+	}
+	50% {
+		height: 8px;
+		width: 39px;
+	}
+	100% {
+		left: 229px;
+		height: 29px;
+		width: 15px;
+	}
+}
+
+@-moz-keyframes cssload-load {
+	0% {
+		left: 0;
+		height: 29px;
+		width: 15px;
+	}
+	50% {
+		height: 8px;
+		width: 39px;
+	}
+	100% {
+		left: 229px;
+		height: 29px;
+		width: 15px;
+	}
 }
 nav, nav li, nav li a{
     display: none;
@@ -22,7 +162,20 @@ nav, nav li, nav li a{
     top: 0;
     height: 100%;
     background: var(--main-color);
+    overflow-y: scroll;
 }
+/* body::-webkit-scrollbar {
+  width: 2px;
+}
+ 
+body::-webkit-scrollbar-track {
+  background-color: blue;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: red;
+  outline: 1px solid slategrey;
+} */
 .logo{
     text-align: center;
     box-shadow: 2px 5px 2px rgba(0, 0, 0, 0.2);
@@ -116,6 +269,18 @@ main{
     padding: 2rem 1.5rem;
     background: #f1f5f9;
     min-height: calc(100vh - 90px);
+}
+@media only screen and (max-width: 1100px) {
+    .sidebar{
+        width: 250px;
+    }
+    header{
+        margin-left: 250px;
+    }
+    .main-content{
+        margin-left: 250px;
+        overflow-x: scroll;
+    }
 }
 @media only screen and (max-width: 768px) {
     nav, nav li, nav li a{

@@ -3,7 +3,7 @@ session_start();
 include "includes/connection.php";
     //get all ads
     //get all ads
-    $sel_all_ads = "SELECT * FROM ads ORDER BY ad_id DESC LIMIT 20";
+    $sel_all_ads = "SELECT * FROM ads where ad_status = 'active' ORDER BY ad_id DESC LIMIT 20";
     // $sel_all_ads = "SELECT * FROM `ads_images` AS img INNER JOIN `ads` AS p on img.ad_id = p.ad_id GROUP BY p.ad_id DESC";
     $run_sel_all_ads = mysqli_query($con, $sel_all_ads);
     $count_row = mysqli_num_rows($run_sel_all_ads);
@@ -32,12 +32,15 @@ include "includes/connection.php";
         <?php
         include "includes/header.php"
         ?>
+        <div id="page-preloader">
+		        <div class="theme-loader">Trade Am</div>
+	      </div>
       <main>
           <!--banner-->
-          <div class="banner" style="background-image: url('images/bg/banner.jpg');">
+          <div class="banner" style="background-image: url('images/bg/app-bg.jpg');">
             <div class="content">
               <div class="h2">Welcome to The Largest Campus Ads Website</div>
-              <div class="lead">Buy and sell anything from used electronic devices to household items</div>
+              <div class="lead">Buy and sell anything from electronic devices to household items</div>
                <div class="mt-5 search">
                <form action="search.php" method="get">
                 <div class="row">
@@ -58,14 +61,12 @@ include "includes/connection.php";
             </div>
           </div><!--/banner-->
 
-          
-        
             <!--Latest ads-->
-    <section class="container latest-products">
+    <section class="container latest-products mt-5">
         <div class="section-title">
-          <h3>Latest Ads</h3>
+          <h3>Items For Sale</h3>
         </div>
-        <div id="additional-dash"></div>
+        <div id="additional-dash" class = "mb-3"></div>
 			<div class="products-main">
 				<div class="row" id="ad-list">
         <?php
@@ -94,43 +95,7 @@ include "includes/connection.php";
 <?php } ?>
 					</div>
 				</div><!--/products-main-->
-        <center><button id="show" class = "mt-5">Show More</button></center>
-    </section>
-
-      <!--Basic Analysis-->
-    <section class="basic-analysis" style="background-image: url('images/bg/about-banner.png');">
-      <div class="container analysis-content">
-        <div class="row">
-          <div class="col-sm-6 col-md-3">
-            <div class="desc">
-              <i class="fa fa-shopping-basket"></i>
-              <h3 class="counter">12090</h3>
-              <p>Ads Posted</p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3">
-            <div class="desc">
-              <i class="fa fa-map-marker"></i>
-              <h3 class="counter">12090</h3>
-              <p>Location</p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3">
-            <div class="desc">
-              <i class="fa fa-user-circle-o"></i>
-              <h3 class="counter">12090</h3>
-              <p>Users</p>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3">
-            <div class="desc">
-              <i class="fa fa-shopping-cart"></i>
-              <h3 class="counter">12090</h3>
-              <p>Sales per day</p>
-            </div>
-          </div>
-        </div>
-      </div>
+        <center><button id="show-more" class = "mt-5">Show More</button></center>
     </section>
   </main>
         <!-- Footer Section Start -->

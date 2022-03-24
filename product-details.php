@@ -2,18 +2,19 @@
 session_start();
 include "includes/connection.php";
     //get all ads
-    $sel_all_ads = "SELECT * FROM ads ORDER BY ad_id DESC LIMIT 20 ";
+    $newCommentCount = $_POST['newCommentCount'];
+    $sel_all_ads = "SELECT * FROM ads where ad_status ='active' ORDER BY ad_id DESC LIMIT $newCommentCount";
     $run_sel_all_ads = mysqli_query($con, $sel_all_ads);
     $count_row = mysqli_num_rows($run_sel_all_ads);
 
     while ($row = mysqli_fetch_assoc($run_sel_all_ads)) {
         $ad_id = $row['ad_id'];
 
-       $image = $row['images'];
+       $image = $row['ad_img'];
      
        $name = $row['ad_name'];
        $description = $row['ad_description'];
-       $price = $row['ad_price'];   
+       $price = $row['ad_price']; 
                                     
 ?>
 <div class="col-6 col-md-3">
